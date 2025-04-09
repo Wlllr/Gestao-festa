@@ -11,7 +11,31 @@
     <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 </head>
 <body>
-<h1>Hello world!</h1>
+
+    <div class="panel panel-default" style="margin: 10px">
+        <div class="panel-heading">
+            <h1>Lista de convidados</h1>
+        </div>
+
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Acompanhantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="convidado: ${convidados}">
+                        <td th:text="${convidado.nome}"></td>
+                        <td th:text="${convidado.quantidadeAcompanhantes}"></td>
+                        <td>João</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 <script th:src="@{/webjars/jquery/.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
